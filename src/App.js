@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Covid from './Components/Covid';
 import CompanyContainer from './Components/CompanyContainer';
-import './App.css';
 
 function App() {
   return (
     <div className='App'>
       <Router>
         <Switch>
-          <Route path='/' exact component={CompanyContainer} />
+          <Route path='/covid' exact component={Covid} />
           <Route path='/stock/:ticker' component={CompanyContainer} />
         </Switch>
       </Router>

@@ -18,10 +18,19 @@ code {
   color: #ffa500;
 }
 
+.aquamarine {
+  color: aquamarine;
+}
 .green {
   color: #008000;
 }
 
 .red {
   color: #ff0000;
+}
+
+a,
+a:hover,
+.wheat {
+  color: wheat;
 }

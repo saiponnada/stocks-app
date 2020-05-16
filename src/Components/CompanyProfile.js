@@ -2,16 +2,16 @@ import React from 'react';
 
 export default function CompanyProfile({ data, quote }) {
   return (
-    <section className='text-left m-1 p-2'>
+    <section className='text-left'>
       <small>{data.ticker}</small>
       <div>
-        <a className='h3' href={data.weburl}>
+        <a className='orange h3' href={data.weburl}>
           {data.name}
         </a>
         {quote && (
-          <span className={`p-1 ` + (quote.c > quote.o ? 'green' : 'red')}>
+          <strong className={`p-1 ` + (quote.c > quote.pc ? 'green' : 'red')}>
             {quote.c}
-          </span>
+          </strong>
         )}
       </div>
       <span className='d-block'>Country : {data.country}</span>
