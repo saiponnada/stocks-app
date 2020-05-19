@@ -3,8 +3,8 @@ import React from 'react';
 export default function CompanyNews({ news }) {
   return (
     <section className='newsContainer pt-4'>
-      <h4 className='orange'>News</h4>
-      {news.length > 0 &&
+      <h4 className='purple'>News</h4>
+      {news.length > 0 ? (
         news.map((item) => (
           <div
             key={item.id}
@@ -23,7 +23,16 @@ export default function CompanyNews({ news }) {
               <h6>
                 <a href={item.url}>{item.headline}</a>
               </h6>
-              <span>{item.summary}</span>
+              <span>
+                {item.summary.length > 300
+                  ? item.summary.substr(0, 300)
+                  : item.summary}
+                {item.summary.length > 300 ? (
+                  <a href={item.url}> see more...</a>
+                ) : (
+                  ''
+                )}
+              </span>
               <small className='d-block pt-2'>
                 Related Tags:{' '}
                 {item.related.split(',').map((item, idx) => (
@@ -34,7 +43,10 @@ export default function CompanyNews({ news }) {
               </small>
             </div>
           </div>
-        ))}
+        ))
+      ) : (
+        <span>No recent news found. Please check back later</span>
+      )}
     </section>
   );
 }

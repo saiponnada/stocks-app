@@ -19,9 +19,14 @@ export function getCompanyProfile(symbol) {
   return fetchAPIData(`stock/profile2`, symbol);
 }
 
+export function getCompanyPeers(symbol) {
+  return fetchAPIData(`stock/peers`, symbol);
+}
+
 export function getCompanyQuote(symbol) {
   return fetchAPIData(`quote`, symbol);
 }
+
 export function getCompanyNews(symbol) {
   let date = new Date();
   const to = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
